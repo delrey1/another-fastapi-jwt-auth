@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.10.13, 3.11]
+        python-version: [3.10.13]
       fail-fast: false
 
     steps:
@@ -20,10 +20,8 @@ jobs:
         run: pip install poetry
       - name: Install Dependencies
         run: poetry install
-
       - name: Test
-        run: pytest
-
+        run: poetry run pytest
 #      - name: Coveralls
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
