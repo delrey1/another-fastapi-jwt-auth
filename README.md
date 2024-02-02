@@ -1,19 +1,29 @@
-<h1 align="left" style="margin-bottom: 20px; font-weight: 500; font-size: 50px; color: black;">
-  FastAPI JWT Auth
-</h1>
+# Another FastAPI JWT Auth
 
-![Tests](https://github.com/IndominusByte/fastapi-jwt-auth/workflows/Tests/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/IndominusByte/fastapi-jwt-auth/badge.svg?branch=master)](https://coveralls.io/github/IndominusByte/fastapi-jwt-auth?branch=master)
-[![PyPI version](https://badge.fury.io/py/fastapi-jwt-auth.svg)](https://badge.fury.io/py/fastapi-jwt-auth)
-[![Downloads](https://static.pepy.tech/personalized-badge/fastapi-jwt-auth?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/fastapi-jwt-auth)
+[//]: # (![Tests]&#40;https://github.com/IndominusByte/fastapi-jwt-auth/workflows/Tests/badge.svg&#41;)
+
+[//]: # ([![Coverage Status]&#40;https://coveralls.io/repos/github/IndominusByte/fastapi-jwt-auth/badge.svg?branch=master&#41;]&#40;https://coveralls.io/github/IndominusByte/fastapi-jwt-auth?branch=master&#41;)
+
+[//]: # ([![PyPI version]&#40;https://badge.fury.io/py/fastapi-jwt-auth.svg&#41;]&#40;https://badge.fury.io/py/fastapi-jwt-auth&#41;)
+
+[//]: # ([![Downloads]&#40;https://static.pepy.tech/personalized-badge/fastapi-jwt-auth?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads&#41;]&#40;https://pepy.tech/project/fastapi-jwt-auth&#41;)
+
+---
+
+[//]: # (**Documentation**: <a href="https://indominusbyte.github.io/fastapi-jwt-auth" target="_blank">https://indominusbyte.github.io/fastapi-jwt-auth</a>)
+
+**Source Code
+**: <a href="https://github.com/delrey1/another-fastapi-jwt-auth/" target="_blank">https://github.com/delrey1/another-fastapi-jwt-auth/</a>
 
 ---
 
-**Documentation**: <a href="https://indominusbyte.github.io/fastapi-jwt-auth" target="_blank">https://indominusbyte.github.io/fastapi-jwt-auth</a>
+## Background
 
-**Source Code**: <a href="https://github.com/IndominusByte/fastapi-jwt-auth" target="_blank">https://github.com/IndominusByte/fastapi-jwt-auth</a>
+This was forked from https://github.com/IndominusByte/fastapi-jwt-auth as it is no longer maintained.
 
----
+This release contains changes related to Pydantic >2 and PyJWT > 2. I used this on my own projects and will be updating
+it
+as required. PRs invited.
 
 ## Features
 FastAPI extension that provides JWT Auth support (secure, easy to use and lightweight), if you were familiar with flask-jwt-extended this extension suitable for you, cause this extension inspired by flask-jwt-extended 😀
@@ -29,12 +39,7 @@ FastAPI extension that provides JWT Auth support (secure, easy to use and lightw
 The easiest way to start working with this extension with pip
 
 ```bash
-pip install fastapi-jwt-auth
-```
-
-If you want to use asymmetric (public/private) key signing algorithms, include the <b>asymmetric</b> extra requirements.
-```bash
-pip install 'fastapi-jwt-auth[asymmetric]'
+pip install another-fastapi-jwt-auth
 ```
 
 ## License
