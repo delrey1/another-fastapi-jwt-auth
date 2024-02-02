@@ -1,12 +1,10 @@
 [tool.poetry]
-#module = "fastapi_jwt_auth"
-name = "fastapi-jwt-auth"
-authors = ["Nyoman Pradipta Dewantara"]
-description = "Nyoman Pradipta Dewantara"
+name = "another-fastapi-jwt-auth"
+authors = ["Nyoman Pradipta Dewantara<nyomanpradipta120@gmail.com>", "delrey1"]
+description = "Another iteration of fastapi-jwt-auth"
 version = "0.0.1"
-#author-email = "nyomanpradipta120@gmail.com"
-#home-page = "https://github.com/IndominusByte/fastapi-jwt-auth"
-
+homepage = "https://github.com/delrey1/another-fastapi-jwt-auth"
+readme = "README.md"
 classifiers = [
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
@@ -21,11 +19,9 @@ classifiers = [
 ]
 
 
-
 [tool.poetry.dependencies]
 fastapi = "^0.109.0"
 PyJWT = "^2"
-
 python = "^3.10.0, <4"
 
 
@@ -34,30 +30,11 @@ python = "^3.10.0, <4"
 #    "PyJWT>=1.7.1,<2.0.0"
 #]
 
-#description-file = "README.md"
 
 #[tool.poetry.metadata.urls]
 #Documentation = "https://indominusbyte.github.io/fastapi-jwt-auth/"
 #
 #[tool.poetry.metadata.requires-extra]
-#test = [
-#    "pytest==6.0.1",
-#    "pytest-cov==2.10.0",
-#    "coveralls==2.1.2"
-#]
-
-#doc = [
-#    "mkdocs>=1.1.2,<2.0.0",
-#    "mkdocs-material>=5.5.0,<6.0.0",
-#    "markdown-include>=0.5.1,<0.6.0"
-#]
-#
-#dev = [
-#    "cryptography>=2.6,<4.0.0",
-#    "uvicorn>=0.11.5,<0.12.0"
-#]
-#
-#asymmetric = ["cryptography>=2.6,<4.0.0"]
 pydantic = "^2.6.0"
 pydantic-settings = "^2.1.0"
 
