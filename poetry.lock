@@ -11,6 +11,9 @@ files = [
     { file = "annotated_types-0.6.0.tar.gz", hash = "sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d" },
 ]
 
+[package.dependencies]
+typing-extensions = { version = ">=4.0.0", markers = "python_version < \"3.9\"" }
+
 [[package]]
 name = "anyio"
 version = "4.2.0"
@@ -728,6 +731,7 @@ files = [
 
 [package.dependencies]
 anyio = ">=3.4.0,<5"
+typing-extensions = { version = ">=3.10.0", markers = "python_version < \"3.10\"" }
 
 [package.extras]
 full = ["httpx (>=0.22.0)", "itsdangerous", "jinja2", "python-multipart", "pyyaml"]
@@ -773,5 +777,5 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.10.0, <4"
-content-hash = "bd8d96e07ae989322b27fa0794b1de72e3c41dd7bcbccdd66a5ec637edba2dc5"
+python-versions = "^3.8.0, <4"
+content-hash = "6a5e2d136d6ae65e91f9c534aab9a07093321614540ddb668aaa1a9b90d9aa64"
