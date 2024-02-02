@@ -12,8 +12,8 @@
 
 [//]: # (**Documentation**: <a href="https://indominusbyte.github.io/fastapi-jwt-auth" target="_blank">https://indominusbyte.github.io/fastapi-jwt-auth</a>)
 
-**Source Code
-**: <a href="https://github.com/delrey1/another-fastapi-jwt-auth/" target="_blank">https://github.com/delrey1/another-fastapi-jwt-auth/</a>
+**Source Code**:
+<a href="https://github.com/delrey1/another-fastapi-jwt-auth/" target="_blank">https://github.com/delrey1/another-fastapi-jwt-auth/</a>
 
 ---
 
