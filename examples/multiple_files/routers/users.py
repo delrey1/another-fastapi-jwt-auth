@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
-from fastapi_jwt_auth import AuthJWT
 from pydantic import BaseModel
+
+from another_fastapi_jwt_auth import AuthJWT
+
 
 class User(BaseModel):
     username: str

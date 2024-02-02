@@ -22,7 +22,7 @@ jobs:
         run: poetry install
 
       - name: Test
-        run: coverage run -m pytest
+        run: python -m coverage run -m pytest
 
 #      - name: Coveralls
 #        env:

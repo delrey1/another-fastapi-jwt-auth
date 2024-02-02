@@ -1,8 +1,10 @@
 import pytest
-from fastapi_jwt_auth import AuthJWT
-from fastapi_jwt_auth.exceptions import AuthJWTException
 from fastapi import FastAPI, Depends, WebSocket, Query
 from fastapi.testclient import TestClient
+
+from another_fastapi_jwt_auth import AuthJWT
+from another_fastapi_jwt_auth.exceptions import AuthJWTException
+
 
 @pytest.fixture(scope='function')
 def client():

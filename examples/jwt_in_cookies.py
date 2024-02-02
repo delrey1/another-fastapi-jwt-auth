@@ -1,8 +1,9 @@
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.responses import JSONResponse
-from fastapi_jwt_auth import AuthJWT
-from fastapi_jwt_auth.exceptions import AuthJWTException
 from pydantic import BaseModel
+
+from another_fastapi_jwt_auth import AuthJWT
+from another_fastapi_jwt_auth.exceptions import AuthJWTException
 
 """
 Note: This is just a basic example how to enable cookies.

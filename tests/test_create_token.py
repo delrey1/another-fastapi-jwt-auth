@@ -4,7 +4,7 @@ import jwt
 import pytest
 from pydantic_settings import BaseSettings
 
-from fastapi_jwt_auth import AuthJWT
+from another_fastapi_jwt_auth import AuthJWT
 
 
 def test_create_access_token(Authorize):

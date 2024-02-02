@@ -2,7 +2,8 @@ import unittest
 
 import pytest
 
-from fastapi_jwt_auth.config import validate_denylist_token_checks, validate_token_location, validate_csrf_methods
+from another_fastapi_jwt_auth.config import validate_denylist_token_checks, validate_token_location, \
+    validate_csrf_methods
 
 
 def test_validate_denylist_token_checkshappy():

@@ -1,10 +1,12 @@
+from datetime import timedelta
+
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.responses import JSONResponse
-from fastapi_jwt_auth import AuthJWT
-from fastapi_jwt_auth.exceptions import AuthJWTException
 from pydantic import BaseModel
-from datetime import timedelta
 from redis import Redis
+
+from another_fastapi_jwt_auth import AuthJWT
+from another_fastapi_jwt_auth.exceptions import AuthJWTException
 
 app = FastAPI()
 

@@ -6,8 +6,10 @@ from typing import Optional, Dict, Union, Sequence
 
 import jwt
 from fastapi import Request, Response, WebSocket
-from fastapi_jwt_auth.auth_config import AuthConfig
-from fastapi_jwt_auth.exceptions import (
+from jwt.algorithms import requires_cryptography, has_crypto
+
+from another_fastapi_jwt_auth.auth_config import AuthConfig
+from another_fastapi_jwt_auth.exceptions import (
     InvalidHeaderError,
     CSRFError,
     JWTDecodeError,
@@ -17,7 +19,6 @@ from fastapi_jwt_auth.exceptions import (
     RefreshTokenRequired,
     FreshTokenRequired
 )
-from jwt.algorithms import requires_cryptography, has_crypto
 
 
 class AuthJWT(AuthConfig):

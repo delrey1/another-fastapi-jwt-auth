@@ -1,7 +1,9 @@
 import pytest
-from fastapi_jwt_auth import AuthJWT
 from fastapi import FastAPI, Depends
 from fastapi.testclient import TestClient
+
+from another_fastapi_jwt_auth import AuthJWT
+
 
 @pytest.fixture(scope='function')
 def client():
