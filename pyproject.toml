@@ -22,7 +22,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-fastapi = "^0.109.1"
+fastapi = "^0.110.1"
 PyJWT = "^2"
 python = "^3.8.0, <4"
 
