@@ -2,7 +2,7 @@
 name = "another-fastapi-jwt-auth"
 authors = ["Nyoman Pradipta Dewantara <nyomanpradipta120@gmail.com>", "delrey1 <del@rey>"]
 description = "Another iteration of fastapi-jwt-auth"
-version = "0.0.5"
+version = "0.1.1"
 homepage = "https://github.com/delrey1/another-fastapi-jwt-auth"
 readme = "README.md"
 classifiers = [
@@ -22,8 +22,8 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-fastapi = "^0.110.1"
-PyJWT = "^2"
+fastapi = "^0.111.0"
+PyJWT = "^2.8.0"
 python = "^3.8.0, <4"
 
 
@@ -37,8 +37,8 @@ python = "^3.8.0, <4"
 #Documentation = "https://indominusbyte.github.io/fastapi-jwt-auth/"
 #
 #[tool.poetry.metadata.requires-extra]
-pydantic = "^2.6.0"
-pydantic-settings = "^2.1.0"
+pydantic = "^2.7.4"
+pydantic-settings = "^2.3.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
