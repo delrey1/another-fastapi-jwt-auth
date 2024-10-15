@@ -43,7 +43,7 @@ pydantic-settings = "^2.3.3"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 requests = "^2.31.0"
-cryptography = "^42.0.2"
+cryptography = ">=42.0.2,<44.0.0"
 httpx = "^0.26.0"
 coverage = "^7.4.1"
 pytest-cov = "^4.1.0"
