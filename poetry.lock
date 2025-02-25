@@ -668,13 +668,13 @@ yaml = ["pyyaml (>=6.0.1)"]
 
 [[package]]
 name = "pyjwt"
-version = "2.10.1"
+version = "2.9.0"
 description = "JSON Web Token implementation in Python"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.8"
 files = [
-    { file = "PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb" },
-    { file = "pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953" },
+    { file = "PyJWT-2.9.0-py3-none-any.whl", hash = "sha256:3b02fb0f44517787776cf48f2ae25d8e14f300e6d7545a4315cee571a415e850" },
+    { file = "pyjwt-2.9.0.tar.gz", hash = "sha256:7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c" },
 ]
 
 [package.extras]
@@ -859,4 +859,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9.0, <4"
-content-hash = "b46eb55bc1d3eb39a386ede05106d08ed1658ff92e6c6a95775449aee53d68e2"
+content-hash = "9cab6e69a944258429df638507843ff4078effc0096339a0f3ba16b0506514d9"
