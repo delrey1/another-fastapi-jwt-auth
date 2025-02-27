@@ -132,7 +132,7 @@ class AuthJWT(AuthConfig):
             headers: Optional[Dict] = None,
             issuer: Optional[str] = None,
             audience: Optional[Union[str, Sequence[str]]] = None,
-            user_claims: Optional[Dict] = {}
+            user_claims: Optional[Dict] = None
     ) -> str:
         """
         Create token for access_token and refresh_token (utf-8)
@@ -160,6 +160,8 @@ class AuthJWT(AuthConfig):
             raise TypeError("algorithm must be a string")
         if user_claims and not isinstance(user_claims, dict):
             raise TypeError("user_claims must be a dictionary")
+        if not user_claims:
+            user_claims = {}
 
         # Data section
         reserved_claims = {
@@ -294,7 +296,7 @@ class AuthJWT(AuthConfig):
             headers: Optional[Dict] = None,
             expires_time: Optional[Union[timedelta, int, bool]] = None,
             audience: Optional[Union[str, Sequence[str]]] = None,
-            user_claims: Optional[Dict] = {}
+            user_claims: Optional[Dict] = None
     ) -> str:
         """
         Create a refresh token with 30 days for expired time (default),
