@@ -20,16 +20,16 @@ def client():
 
     @app.get('/all-token')
     def all_token(Authorize: AuthJWT = Depends()):
-        access_token = Authorize.create_access_token(subject=1, fresh=True)
-        refresh_token = Authorize.create_refresh_token(subject=1)
+        access_token = Authorize.create_access_token(subject="1", fresh=True)
+        refresh_token = Authorize.create_refresh_token(subject="1")
         Authorize.set_access_cookies(access_token)
         Authorize.set_refresh_cookies(refresh_token)
         return {"msg": "all token"}
 
     @app.get('/all-token-response')
     def all_token_response(Authorize: AuthJWT = Depends()):
-        access_token = Authorize.create_access_token(subject=1, fresh=True)
-        refresh_token = Authorize.create_refresh_token(subject=1)
+        access_token = Authorize.create_access_token(subject="1", fresh=True)
+        refresh_token = Authorize.create_refresh_token(subject="1")
         response = JSONResponse(content={"msg": "all token"})
         Authorize.set_access_cookies(access_token, response)
         Authorize.set_refresh_cookies(refresh_token, response)
@@ -37,26 +37,26 @@ def client():
 
     @app.get('/access-token')
     def access_token(Authorize: AuthJWT = Depends()):
-        access_token = Authorize.create_access_token(subject=1)
+        access_token = Authorize.create_access_token(subject="1")
         Authorize.set_access_cookies(access_token)
         return {"msg": "access token"}
 
     @app.get('/access-token-response')
     def access_token_response(Authorize: AuthJWT = Depends()):
-        access_token = Authorize.create_access_token(subject=1)
+        access_token = Authorize.create_access_token(subject="1")
         response = JSONResponse(content={"msg": "access token"})
         Authorize.set_access_cookies(access_token, response)
         return response
 
     @app.get('/refresh-token')
     def refresh_token(Authorize: AuthJWT = Depends()):
-        refresh_token = Authorize.create_refresh_token(subject=1)
+        refresh_token = Authorize.create_refresh_token(subject="1")
         Authorize.set_refresh_cookies(refresh_token)
         return {"msg": "refresh token"}
 
     @app.get('/refresh-token-response')
     def refresh_token_response(Authorize: AuthJWT = Depends()):
-        refresh_token = Authorize.create_refresh_token(subject=1)
+        refresh_token = Authorize.create_refresh_token(subject="1")
         response = JSONResponse(content={"msg": "refresh token"})
         Authorize.set_refresh_cookies(refresh_token, response)
         return response
@@ -121,7 +121,7 @@ def test_set_cookie_not_valid_type_max_age(Authorize):
     def get_cookie_location():
         return [("authjwt_token_location", {'cookies'}), ("authjwt_secret_key", "secret")]
 
-    token = Authorize.create_access_token(subject=1)
+    token = Authorize.create_access_token(subject="1")
 
     with pytest.raises(TypeError, match=r"max_age"):
         Authorize.set_access_cookies(token, max_age="string")
@@ -135,7 +135,7 @@ def test_set_unset_cookies_not_valid_type_response(Authorize):
     def get_cookie_location():
         return [("authjwt_token_location", {'cookies'}), ("authjwt_secret_key", "secret")]
 
-    token = Authorize.create_access_token(subject=1)
+    token = Authorize.create_access_token(subject="1")
 
     with pytest.raises(TypeError, match=r"response"):
         Authorize.set_access_cookies(token, response={"msg": "hello"})
@@ -274,7 +274,7 @@ def test_cookie_optional_protected(client):
     client.get('/access-token')
     response = client.post(url)
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # change csrf protect to False not check csrf token
     @AuthJWT.load_config
@@ -289,7 +289,7 @@ def test_cookie_optional_protected(client):
     client.get('/access-token')
     response = client.post(url)
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # missing csrf token
     @AuthJWT.load_config
@@ -314,7 +314,7 @@ def test_cookie_optional_protected(client):
 
     response = client.post(url, headers={"X-CSRF-Token": csrf_token})
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # missing claim csrf in token
     @AuthJWT.load_config
@@ -351,7 +351,7 @@ def test_cookie_optional_protected(client):
     # valid request
     response = client.post(url, headers={"X-CSRF": csrf_token})
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
 
 @pytest.mark.parametrize("url", ["/jwt-required", "/jwt-refresh", "/jwt-fresh"])
@@ -378,7 +378,7 @@ def test_cookie_protected(url, client):
         response = client.post(url, headers={"X-CSRF-Refresh": csrf_refresh})
 
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # missing csrf token
     response = client.post(url)
@@ -406,7 +406,7 @@ def test_cookie_protected(url, client):
     client.get('/all-token')
     response = client.post(url)
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # change request methods and not check csrf token
     @AuthJWT.load_config
@@ -420,7 +420,7 @@ def test_cookie_protected(url, client):
 
     response = client.post(url)
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # missing claim csrf in token
     @AuthJWT.load_config
@@ -450,4 +450,4 @@ def test_cookie_protected(url, client):
     else:
         response = client.post(url, headers={"X-CSRF-Token": csrf_refresh})
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}

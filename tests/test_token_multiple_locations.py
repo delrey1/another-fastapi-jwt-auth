@@ -11,8 +11,8 @@ def client():
 
     @app.get('/get-token')
     def get_token(Authorize: AuthJWT = Depends()):
-        access_token = Authorize.create_access_token(subject=1,fresh=True)
-        refresh_token = Authorize.create_refresh_token(subject=1)
+        access_token = Authorize.create_access_token(subject="1", fresh=True)
+        refresh_token = Authorize.create_refresh_token(subject="1")
 
         Authorize.set_access_cookies(access_token)
         Authorize.set_refresh_cookies(refresh_token)
@@ -64,7 +64,7 @@ def test_get_subject_through_cookie_or_headers(url,client):
         response = client.post(url,headers={"Authorization":f"Bearer {refresh_token}"})
 
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     # access through cookies
     if url != "/jwt-refresh":
@@ -73,6 +73,6 @@ def test_get_subject_through_cookie_or_headers(url,client):
         response = client.post(url,headers={"X-CSRF-Token": refresh_csrf})
 
     assert response.status_code == 200
-    assert response.json() == {'hello': 1}
+    assert response.json() == {'hello': "1"}
 
     AuthJWT._token_location = {"headers"}
